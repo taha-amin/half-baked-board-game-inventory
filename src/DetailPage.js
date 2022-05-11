@@ -10,8 +10,12 @@ export default function DetailPage() {
   useEffect(() => {
     async function fetch() {
       const gameResponse = await getGameById(match.params.id);
+
+      setGame(gameResponse);
     }
-  });
+
+    fetch();
+  }, [match]);
 
   return (
     <div className="detail">
