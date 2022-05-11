@@ -17,8 +17,14 @@ export default function App() {
   useEffect(() => {
     async function fetch() {
       const user = await getUser();
-    }
-  });
+
+      if (user) {
+        setToken(user.access_token);
+        setEmail(user.user.email);
+      }
+
+    }, []);
+  
 
   async function handleLogout() {
     // call the logout function
