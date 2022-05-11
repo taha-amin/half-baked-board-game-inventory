@@ -41,7 +41,12 @@ export default function CreatePage() {
         <label>
           Title
           {/* on change, set the title in state */}
-          <input required name="title" />
+          <input
+            value={gameInTheForm.title}
+            onChange={(e) => gameInTheForm({ ...gameInTheForm, title: e.target.value })}
+            required
+            name="title"
+          />
         </label>
         <label>
           Genre
