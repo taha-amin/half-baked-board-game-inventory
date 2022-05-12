@@ -47,12 +47,12 @@ export default function App() {
                 Create Page
               </NavLink>
               <button onClick={handleLogout}>Logout</button>
-              <p>{email}</p>
-              <p>{token}</p>
+              {/* <p>{token}</p> */}
             </>
           )}
         </header>
         <main>
+          <p>Email: {email}</p>
           <Switch>
             <Route exact path="/">
               {/* if there is a user, redirect to the board games list. Otherwise, render the auth page. Note that the AuthPage will need a function called setUser that can set the user state in App.js */}
