@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { getUser } from './services/fetch-utils';
 import { BrowserRouter as Router, Switch, NavLink, Route, Redirect } from 'react-router-dom';
 import AuthPage from './AuthPage';
-import DetailPage from './DetailPage';
+import DetailPage from './UpdatePage';
 import ListPage from './ListPage';
-import CreatePage from './CreatePage';
+import UpdatePage from './UpdatePage';
 
 import './App.css';
 import { logout } from './services/fetch-utils';
@@ -71,7 +71,7 @@ export default function App() {
             </Route>
             <Route exact path="/create">
               {/* if there is a user, render the create page. Otherwise, redirect to the home route/auth page */}
-              {token ? <CreatePage /> : <Redirect to="/" />}
+              {token ? <UpdatePage /> : <Redirect to="/" />}
             </Route>
           </Switch>
         </main>
