@@ -43,7 +43,7 @@ export default function CreatePage() {
           {/* on change, set the title in state */}
           <input
             value={gameInTheForm.title}
-            onChange={(e) => gameInTheForm({ ...gameInTheForm, title: e.target.value })}
+            onChange={(e) => setGameInTheForm({ ...gameInTheForm, title: e.target.value })}
             required
             name="title"
           />
@@ -53,7 +53,7 @@ export default function CreatePage() {
           {/* on change, set the genre in state */}
           <select
             required
-            onChange={(e) => gameInTheForm({ ...gameInTheForm, genre: e.target.value })}
+            onChange={(e) => setGameInTheForm({ ...gameInTheForm, genre: e.target.value })}
           >
             <option>Tile-laying</option>
             <option>Economic</option>
@@ -69,7 +69,7 @@ export default function CreatePage() {
           {/* on change, set the designer in state */}
           <input
             required
-            onChange={(e) => gameInTheForm({ ...gameInTheForm, designer: e.target.value })}
+            onChange={(e) => setGameInTheForm({ ...gameInTheForm, designer: e.target.value })}
             name="designer"
           />
         </label>
@@ -78,7 +78,7 @@ export default function CreatePage() {
           {/* on change, set the min players in state */}
           <input
             required
-            onChange={(e) => gameInTheForm({ ...gameInTheForm, minPlayers: e.target.value })}
+            onChange={(e) => setGameInTheForm({ ...gameInTheForm, minPlayers: e.target.value })}
             name="min_players"
           />
         </label>
@@ -87,7 +87,7 @@ export default function CreatePage() {
           {/* on change, set the max players in state */}
           <input
             required
-            onChange={(e) => gameInTheForm({ ...gameInTheForm, maxPlayers: e.target.value })}
+            onChange={(e) => setGameInTheForm({ ...gameInTheForm, maxPlayers: e.target.value })}
             name="max_players"
           />
         </label>
@@ -96,7 +96,7 @@ export default function CreatePage() {
           {/* on change, set the description in state */}
           <textarea
             required
-            onChange={(e) => gameInTheForm({ ...gameInTheForm, description: e.target.value })}
+            onChange={(e) => setGameInTheForm({ ...gameInTheForm, description: e.target.value })}
             name="max_players"
           />
         </label>
