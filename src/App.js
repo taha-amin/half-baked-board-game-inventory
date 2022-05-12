@@ -46,6 +46,9 @@ export default function App() {
               <NavLink exact activeClassName="active-link" to="/create">
                 Create Page
               </NavLink>
+              <NavLink exact activeClassName="active-link" to="/update-games">
+                Update Games
+              </NavLink>
               <button onClick={handleLogout}>Logout</button>
             </>
           )}
