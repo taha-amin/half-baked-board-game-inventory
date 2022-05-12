@@ -18,6 +18,12 @@ export async function signIn(email, password) {
   return response.user;
 }
 
+export async function updateGame(id, newGame) {
+  const response = await client.from('board_games').update(newGame).match({ id });
+
+  return response.use;
+}
+
 // removes the token from local storage and redirects the user home
 export async function logout() {
   await client.auth.signOut();
