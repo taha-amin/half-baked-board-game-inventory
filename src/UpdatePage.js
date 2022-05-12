@@ -37,7 +37,7 @@ export default function UpdatePage() {
   return (
     <div className="create-page">
       <form onSubmit={handleUpdateSubmit}>
-        Update a board game
+        Update this board game
         <label>
           Title
           {/* on change, set the title in state */}
