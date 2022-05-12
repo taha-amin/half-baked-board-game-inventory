@@ -19,8 +19,8 @@ export default function CreatePage() {
     genre: '',
     designer: '',
     description: '',
-    minPlayers: 0,
-    maxPlayers: 0,
+    min_players: 1,
+    max_players: 0,
   });
 
   async function handleSubmit(e) {
@@ -55,6 +55,7 @@ export default function CreatePage() {
             required
             value={gameInTheForm.genre}
             onChange={(e) => setGameInTheForm({ ...gameInTheForm, genre: e.target.value })}
+            name="genre"
           >
             <option>Tile-laying</option>
             <option>Economic</option>
@@ -80,8 +81,8 @@ export default function CreatePage() {
           {/* on change, set the min players in state */}
           <input
             required
-            value={gameInTheForm.minPlayers}
-            onChange={(e) => setGameInTheForm({ ...gameInTheForm, minPlayers: e.target.value })}
+            value={gameInTheForm.min_players}
+            onChange={(e) => setGameInTheForm({ ...gameInTheForm, min_players: e.target.value })}
             name="min_players"
           />
         </label>
@@ -90,8 +91,8 @@ export default function CreatePage() {
           {/* on change, set the max players in state */}
           <input
             required
-            value={gameInTheForm.maxPlayers}
-            onChange={(e) => setGameInTheForm({ ...gameInTheForm, maxPlayers: e.target.value })}
+            value={gameInTheForm.max_players}
+            onChange={(e) => setGameInTheForm({ ...gameInTheForm, max_players: e.target.value })}
             name="max_players"
           />
         </label>
@@ -102,7 +103,7 @@ export default function CreatePage() {
             required
             value={gameInTheForm.description}
             onChange={(e) => setGameInTheForm({ ...gameInTheForm, description: e.target.value })}
-            name="max_players"
+            name="description"
           />
         </label>
         <button>Create game</button>
