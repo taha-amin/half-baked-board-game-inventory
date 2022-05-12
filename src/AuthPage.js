@@ -6,10 +6,8 @@ export default function AuthPage({ setEmail, setToken }) {
   const [signUpEmail, setSignUpEmail] = useState('');
   const [signUpPassword, setSignUpPassword] = useState('');
 
-  const [{ email: signInEmail, password: signInPassword }, setSignInFormData] = useState({
-    email: '',
-    password: '',
-  });
+  const [signInEmail, setSignInEmail] = useState('');
+  const [signInPassword, setSignInPassword] = useState('');
 
   async function handleSignIn(e) {
     e.preventDefault();
@@ -80,7 +78,7 @@ export default function AuthPage({ setEmail, setToken }) {
           <input
             required
             type="email"
-            onChange={(e) => setSignInFormData(e.target.value)}
+            onChange={(e) => setSignInEmail(e.target.value)}
             name="email"
           />
         </label>
@@ -90,7 +88,7 @@ export default function AuthPage({ setEmail, setToken }) {
           <input
             required
             type="password"
-            onChange={(e) => setSignInFormData(e.target.value)}
+            onChange={(e) => setSignInPassword(e.target.value)}
             name="password"
           />
         </label>
