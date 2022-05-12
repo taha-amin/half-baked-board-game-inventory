@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { getUser } from './services/fetch-utils';
 import { BrowserRouter as Router, Switch, NavLink, Route, Redirect } from 'react-router-dom';
 import AuthPage from './AuthPage';
