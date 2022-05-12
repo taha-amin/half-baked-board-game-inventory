@@ -24,24 +24,33 @@ export default class CreatePage extends React.Component {
   // minPlayers;
   // maxPlayers;
 
-  async handleSubmit(e) {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { title, genre, designer, description, min_players, max_players } = this.state;
+    // const { title, genre, designer, description, min_players, max_players } = this.state;
 
     // create a game
+    const {
+      title: title,
+      genre: genre,
+      designer: designer,
+      description: description,
+      min_players: min_players,
+      max_players: max_players,
+    } = this.state;
+
     await createGame({
-      title: this.state.title,
-      genre: this.state.genre,
-      designer: this.state.designer,
-      description: this.state.description,
-      min_players: this.state.min_players,
-      max_players: this.state.max_players,
+      title: title,
+      genre: genre,
+      designer: designer,
+      description: description,
+      min_players: min_players,
+      max_players: max_players,
     });
 
     // use history.push to send the user to the list page
     this.props.history.push('/board-games');
-  }
+  };
 
   render() {
     const { title, genre, designer, description, min_players, max_players } = this.state;

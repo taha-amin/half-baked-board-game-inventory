@@ -17,22 +17,12 @@ export default class ListPage extends React.Component {
     this.setState({ games: fetchedGames });
   }
 
-  // fetch the games on load and inject them into state
-  // useEffect(() => {
-  //   async function fetch() {
-  //     const fetchedGames = await getGames();
-
-  //     setGames(fetchedGames);
-  //   }
-
-  //   fetch();
-  // }, []);
-
   render() {
+    // const { games } = this.props;
     return (
       <div className="list games">
         {/* map through the games in state and render Game components */}
-        {this.maps.map((game) => (
+        {this.state.games.map((game) => (
           <Game key={game.id} game={game} />
         ))}
       </div>
