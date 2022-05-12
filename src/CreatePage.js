@@ -19,7 +19,7 @@ export default function CreatePage() {
     genre: '',
     designer: '',
     description: '',
-    min_players: 1,
+    min_players: 2,
     max_players: 0,
   });
 
