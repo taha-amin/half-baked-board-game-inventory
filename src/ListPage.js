@@ -1,28 +1,31 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { getGames } from './services/fetch-utils';
 import Game from './Game';
 
-export default function ListPage() {
+export default class ListPage extends React.Component {
   // you'll need some state to hold onto the array of games
-  const [games, setGames] = useState([]);
+  constructor() {
+    super();
+    this.state = {
+      games: [],
+    };
+  }
 
-  // fetch the games on load and inject them into state
-  useEffect(() => {
-    async function fetch() {
-      const fetchedGames = await getGames();
+  async componentDidMount() {
+    const fetchedGames = await getGames();
 
-      setGames(fetchedGames);
-    }
+    this.setState({ games: fetchedGames });
+  }
 
-    fetch();
-  }, []);
-
-  return (
-    <div className="list games">
-      {/* map through the games in state and render Game components */}
-      {games.map((game) => (
-        <Game key={game.id} game={game} />
-      ))}
-    </div>
-  );
+  render() {
+    // const { games } = this.props;
+    return (
+      <div className="list games">
+        {/* map through the games in state and render Game components */}
+        {this.state.games.map((game) => (
+          <Game key={game.id} game={game} />
+        ))}
+      </div>
+    );
+  }
 }
