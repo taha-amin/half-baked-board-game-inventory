@@ -47,6 +47,8 @@ export default function App() {
                 Create Page
               </NavLink>
               <button onClick={handleLogout}>Logout</button>
+              <p>{email}</p>
+              <p>{token}</p>
             </>
           )}
         </header>
