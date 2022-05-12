@@ -53,6 +53,7 @@ export default function CreatePage() {
           {/* on change, set the genre in state */}
           <select
             required
+            value={gameInTheForm.genre}
             onChange={(e) => setGameInTheForm({ ...gameInTheForm, genre: e.target.value })}
           >
             <option>Tile-laying</option>
@@ -69,6 +70,7 @@ export default function CreatePage() {
           {/* on change, set the designer in state */}
           <input
             required
+            value={gameInTheForm.designer}
             onChange={(e) => setGameInTheForm({ ...gameInTheForm, designer: e.target.value })}
             name="designer"
           />
@@ -78,6 +80,7 @@ export default function CreatePage() {
           {/* on change, set the min players in state */}
           <input
             required
+            value={gameInTheForm.minPlayers}
             onChange={(e) => setGameInTheForm({ ...gameInTheForm, minPlayers: e.target.value })}
             name="min_players"
           />
@@ -87,6 +90,7 @@ export default function CreatePage() {
           {/* on change, set the max players in state */}
           <input
             required
+            value={gameInTheForm.maxPlayers}
             onChange={(e) => setGameInTheForm({ ...gameInTheForm, maxPlayers: e.target.value })}
             name="max_players"
           />
@@ -96,6 +100,7 @@ export default function CreatePage() {
           {/* on change, set the description in state */}
           <textarea
             required
+            value={gameInTheForm.description}
             onChange={(e) => setGameInTheForm({ ...gameInTheForm, description: e.target.value })}
             name="max_players"
           />
